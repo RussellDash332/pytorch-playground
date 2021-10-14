@@ -9,6 +9,9 @@ learning_rate = 0.01
 optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
 epochs = 100
 
+X_train = np.array([i for i in range(11)], dtype=np.float32).reshape(-1, 1) # make a column vector
+y_train = np.array([2*i + 1 for i in range(11)], dtype=np.float32).reshape(-1, 1) # make a column vector
+
 for epoch in range(epochs):
     epoch += 1
     
@@ -26,9 +29,6 @@ for epoch in range(epochs):
     optimizer.step()
     
     print("epoch {}, loss {}".format(epoch, loss.data[0]))
-    
-X_train = np.array([i for i in range(11)], dtype=np.float32).reshape(-1, 1) # make a column vector
-y_train = np.array([2*i + 1 for i in range(11)], dtype=np.float32).reshape(-1, 1) # make a column vector
 
 predicted = model(Variable(torch.from_numpy(X_train))).data.numpy()
 
