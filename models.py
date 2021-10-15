@@ -3,6 +3,8 @@ import torch.nn as nn
 import torchvision.transforms as transforms
 import torchvision.datasets as datasets
 from torch.autograd import Variable
+import numpy as np
+import matplotlib.pyplot as plt
 
 class LinearRegressionModel(nn.Module):
     def __init__(self, input_size, output_size):

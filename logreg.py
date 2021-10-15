@@ -64,6 +64,6 @@ for epoch in range(num_epochs):
                 
             accuracy = 100 * correct / total
             
-            print("Iteration {}, Loss: {}, Accuracy: {}".format(iter, loss.data[0], accuracy))
+            print("Iteration {}, Loss: {}, Accuracy: {}".format(iter, loss.data, accuracy))
             
 # torch.save(model.state_dict(), "logreg_model.pkl")

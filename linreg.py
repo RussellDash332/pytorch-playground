@@ -28,7 +28,7 @@ for epoch in range(epochs):
     
     optimizer.step()
     
-    print("epoch {}, loss {}".format(epoch, loss.data[0]))
+    print("epoch {}, loss {}".format(epoch, loss.data))
 
 predicted = model(Variable(torch.from_numpy(X_train))).data.numpy()
 
